@@ -1,4 +1,4 @@
-# LangChain workshop
+# LangChain web search workshop (OpenAI)
 
 ## setting up LangChain + first interaction
 

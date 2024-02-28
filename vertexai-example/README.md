@@ -1,0 +1,2 @@
+# VertexAI x LangChain workshop
+
