@@ -8,4 +8,5 @@ RUN pip install -r requirements.txt
 COPY prompts.py /app/prompts.py
 COPY app.py /app/app.py
 
-COPY .env /app/.env
+COPY vertexai-sa.json /app/vertexai-sa.json
+COPY .env.example /app/.env
