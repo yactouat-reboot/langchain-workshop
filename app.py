@@ -9,3 +9,6 @@ from langchain_openai import ChatOpenAI
 
 # we create an instance of Chat-GPT programmatically
 chat_gpt = ChatOpenAI()
+
+res = chat_gpt.invoke("what is LangChain and what can I do with it?")
+print(res)
