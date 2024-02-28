@@ -15,9 +15,7 @@ control_prompt_template = """Do you have the answer to the question below, delim
 -----------------------------------
 {question}
 -----------------------------------
-If the answer is yes, give us your source.
-If the source does not exist, then you don't know the answer.
-"""
+If the answer is yes, give us your source."""
 initial_prompt = "What is LangChain and what can I do with it?"
 
 prompt = PromptTemplate.from_template(control_prompt_template)
