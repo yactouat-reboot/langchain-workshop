@@ -76,6 +76,10 @@ def generate_docker_compose_from_folder_structure(folder_structure: str) -> str:
     return docker_compose_res
 
 if __name__ == "__main__":
+    # if the `./out` directory does not exist, create it
+    if not os.path.exists('./out'):
+        os.makedirs('./out')
+
     # getting application description from the command line arg
     application_description = sys.argv[1]
 
