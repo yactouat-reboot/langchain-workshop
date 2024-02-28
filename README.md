@@ -26,4 +26,10 @@ We want to create an agent that is able to look into the web IF he does not know
 
 - user asks a question
 - LLM verifies if it has the information in its knowledge base (self-ask technique)
-- if not, we crawl the wbe to find the answer
+- if not, we crawl the web to find the answer to the question:
+    - we use a search engine to find the answer
+    - we check first if the body of the SERP (Search Engine Results Page) contains the information that answers the question
+    - if so we display the answer
+    - if not, we crawl x links to visit all the pages of the SERP
+    - we summarize these pages into a single text
+    - we display the answer based on the summary

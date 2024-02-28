@@ -6,6 +6,7 @@ import sys
 # ! we verify that the environment variables are loaded
 # print(os.getenv('OPENAI_API_KEY'))
 
+from duckduckgo_search import DDGS
 from langchain_openai import ChatOpenAI
 # this import allows us to format prompts with variables
 from langchain.prompts import PromptTemplate
@@ -46,6 +47,12 @@ formatting_response = chat_gpt.invoke(formatting_prompt.format(
 ))
 
 if (formatting_response.content == "True"):
+    # we display the raw bot answer
     print(knowledge_base_answer)
 else:
-    print("TODO make a web search to find the answer to the question.")
+    # when the bot does not know the answer, we trigger a web search with DuckDuckGo
+    with DDGS() as ddgs:
+        results = [r for r in ddgs.text(question, safesearch='moderate', timelimit='y', max_results=8)]
+    print(results[0])
+
+# TODO display all the results in a web page or another nice format
