@@ -7,7 +7,8 @@ You are also given an input text, delimited by dashes below.
 -----------------------------------
 {input_text}
 -----------------------------------
-Use the input text to answer the question. If you can't answer the question, output "I don't know the answer".
+Use the input text ONLY to answer the question. 
+If you can't answer the question with the input text, output "I don't know the answer".
 """
 
 control_prompt_template = """Do you have the answer to the question below, delimited by dashes, in your knowledge base? 

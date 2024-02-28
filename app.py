@@ -44,6 +44,11 @@ else:
         results = [r for r in ddgs.text(question, safesearch='moderate', timelimit='y', max_results=8)]
         # we get all the `title` and the `body` of the results into a single text
         body_title_aggregate = "\n\n".join([f"\n---{r['title']}\n{r['body']}\n---" for r in results])
-        print(body_title_aggregate)
+        answer_to_question_prompt_template = PromptTemplate.from_template(answer_to_question_with_text_prompt_template)
+        answer_to_question_response = chat_gpt.invoke(answer_to_question_prompt_template.format(
+            question=question,
+            input_text=body_title_aggregate
+        ))
+        print(answer_to_question_response.content)
 
 # TODO display all the results in a web page or another nice format
