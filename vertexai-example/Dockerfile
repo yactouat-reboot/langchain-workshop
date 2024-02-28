@@ -10,3 +10,5 @@ COPY app.py /app/app.py
 
 COPY vertexai-sa.json /app/vertexai-sa.json
 COPY .env.example /app/.env
+
+RUN mkdir out

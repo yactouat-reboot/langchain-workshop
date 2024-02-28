@@ -11,3 +11,5 @@ services:
             target: /app/app.py
           - action: rebuild
             path: requirements.txt
+    volumes:
+      - ./out:/app/out
